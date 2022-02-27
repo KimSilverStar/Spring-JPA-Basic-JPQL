@@ -3,7 +3,7 @@ package jpql;
 import javax.persistence.*;
 import java.util.List;
 
-public class JpaMain1 {
+public class JpaMain_Query {
 	public static void main(String[] args) {
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("hello");
 		// persistence.xml 의 <persistence-unit name="hello">

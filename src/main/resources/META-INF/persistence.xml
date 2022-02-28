@@ -10,7 +10,9 @@
             <property name="javax.persistence.jdbc.user" value="sa"/>
             <property name="javax.persistence.jdbc.password" value=""/>
             <property name="javax.persistence.jdbc.url" value="jdbc:h2:tcp://localhost/~/jpql"/>
-            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+<!--            <property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>-->
+            <property name="hibernate.dialect" value="dialect.MyH2Dialect"/>
+<!--            사용자 정의 JPQL 함수 사용-->
 
             <!-- 옵션 - SQL 쿼리문을 콘솔에 표시 -->
             <property name="hibernate.show_sql" value="true"/>

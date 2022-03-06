@@ -102,6 +102,25 @@ public class JpaMain_Fetch_Join {
 				System.out.println();
 			}
 
+			/* Fetch Join 의 한계 - 컬렉션 Fetch Join 시, 페이징 API 사용 X
+			   => 해결 방법: Fetch Join 대신, BatchSize 로 최적화 */
+			String query5 = "select t from Team t";
+			List<Team> resultList5 = em.createQuery(query5, Team.class)
+					.setFirstResult(0)
+					.setMaxResults(2)
+					.getResultList();
+
+			System.out.println("resultList5.size = " + resultList5.size());
+
+			for (Team team : resultList5) {
+				System.out.println("team = " + team.getName() +
+						", members.size = " + team.getMembers().size());
+
+				for (Member member : team.getMembers())
+					System.out.println("-> member = " + member);
+				System.out.println();
+			}
+
 			tx.commit();
 		} catch (Exception e) {
 			tx.rollback();

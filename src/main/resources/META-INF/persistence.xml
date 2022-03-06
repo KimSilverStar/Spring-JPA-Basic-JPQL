@@ -20,6 +20,7 @@
             <property name="hibernate.use_sql_comments" value="true"/>
             <property name="hibernate.hbm2ddl.auto" value="create" />
             <!-- create: 애플리케이션 로딩 시점에 테이블(Member 등)이 존재하면 drop 하고, 새로 create -->
+            <property name="hibernate.default.batch_fetch_size" value="100" />
         </properties>
     </persistence-unit>
 </persistence>
